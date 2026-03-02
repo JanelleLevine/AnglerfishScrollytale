@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Anglerfish</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/css/main.css" as="style">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <div class="page-shell">
+    <img class="corner-logo" src="./logo1.png" alt="Museum of Ocean Science logo">
+    <header class="hero">
+      <div class="title-card" aria-label="Hero title card">
+        <img class="title-card-figure" src="./jo.png" alt="" aria-hidden="true">
+        <div class="title-card-content">
+          <h1>
+            <span class="title-line">Taylor Swift</span>
+            <span class="title-line title-vs">vs.</span>
+            <span class="title-line">The Anglerfish</span>
+          </h1>
+          <p class="subhead">A data story about fame, curiosity, and the politics of which species we save.</p>
+          <p class="title-meta">
+            <span class="title-meta-main">
+              <span>JANELLE LEVINE</span>
+              <span class="title-separator" aria-hidden="true">|</span>
+              <span>THE MUSEUM OF OCEAN SCIENCE</span>
+            </span>
+            <span class="title-meta-date">March 1, 2026</span>
+          </p>
+        </div>
+      </div>
+      <section class="tldr-card" aria-label="Quick summary">
+        <p class="tldr-label">TL;DR</p>
+        <ul>
+          <li>A February 2025 black seadevil photo drove a sharp anglerfish attention spike.</li>
+          <li>For four days (Feb 14-17, 2025), anglerfish pageviews beat Taylor Swift pageviews.</li>
+          <li>The surge was real but brief, and the open question is whether awareness can turn into conservation action.</li>
+        </ul>
+      </section>
+      <div class="story-copy">
+        <p>In 2025, a deep-sea anglerfish known as a black seadevil captured the hearts of people around the world when an organization called Condrik Tenerife released a rare image of the species taken off the coast of the Canary Islands. The photo spread rapidly across social media and news outlets, transforming one of the oceanâ€™s most elusive predators into an unlikely internet celebrity.</p>
+        <p>When she captured global attention, it made me wonder: does viral marine imagery actually translate into real-world conservation and protection?</p>
+        <p>The first thing I did was turn to data. Using the Wikimedia Pageviews Analysis tool (pageviews.wmcloud.org), I pulled three years of traffic data for the â€œAnglerfishâ€ Wikipedia page. In the chart below, days are plotted along the x-axis and Wikipedia pageviews are along the y-axis. It only takes a quick glance to see the surge of interest that this single photo caused. At its peak, the Anglerfish Wikipedia page was visited 38,444 times in a single day.</p>
+      </div>
+      <div class="meta-row">
+        <p id="status" class="status"></p>
+      </div>
+    </header>
+
+    <section class="chart-card">
+      <h2>The Black Seadevil Pageview Surge</h2>
+      <p class="chart-caption">Daily search interest with peak annotation and hover details.</p>
+      <p class="section-lead">What to look for: one dramatic peak in mid-February 2025, followed by a rapid return toward baseline.</p>
+      <div class="chart-wrap">
+        <svg id="single-chart" viewBox="0 0 960 520" role="img" aria-label="Anglerfish daily search trend"></svg>
+        <div id="single-tooltip" class="tooltip"></div>
+      </div>
+    </section>
+
+    <div class="story-copy">
+      <p>Ok, so there was a surge in page views. What does that mean? 38,444 feels like a very big number, but maybe it's just a tiny blip compared to other commonly searched things.</p>
+      <p>How does this compare to page views for other animals? Other popular things? So I did what any curious journalist would do. I compared our anglerfish to the most universally popular topic I could think of: Taylor Swift.</p>
+      <p>This comparison helps me with two things:</p>
+      <ol>
+        <li>It provides a baseline for interpreting scale, putting the anglerfish spike into perspective.</li>
+        <li>It helps me to understand whether the anglerfish spike was culturally significant, or statistically trivial.</li>
+      </ol>
+      <p>Initially, we see that Taylor Swift's pageviews massively overwhelm that of the anglerfish. But when we zoom in to the anglerfish spike, we see a shocking upset. On Feb 14th, 15th, 16th, and 17th, the anglerfish's Wikipedia page actually overtook Taylor Swift's.</p>
+    </div>
+
+    <section class="chart-card">
+      <h2>Taylor Swift versus The Fish</h2>
+      <p class="section-lead">Read this as a scale check: the baseline favors Taylor Swift, but the anglerfish briefly overtakes during the spike window.</p>
+      <div class="chart-wrap">
+        <svg id="single-remake-chart" viewBox="0 0 960 520" role="img" aria-label="Second anglerfish daily search trend chart"></svg>
+        <div id="single-remake-tooltip" class="tooltip"></div>
+      </div>
+      <p class="table-caption">Peak-day comparison (Feb 14-17, 2025)</p>
+      <div class="story-copy">
+        <p>A quick disclaimer, because the internet can be... the internet. I am not comparing Taylor to a fish in any metaphorical or political sense. I chose her because she's popular. That's it. HOWEVER, now that the comparison is out there, it's hard not to notice that we're looking at two different types of female icons.</p>
+        <p>This isn't a post about biology, but female black seadevils have some pretty fascinating characteristics, and I'd be remiss if I didn't touch on some of them. The individual filmed off the coast of Tenerife is definitely a lady. In most deep-sea anglerfish species, females are dramatically larger than males. The male's evolutionary strategy is kind of just to latch on to the female and continue existing there for the rest of his life. He fuses to her body and becomes functionally parasitic, contributing sperm while she does the hunting.</p>
+        <p>It's a story for another day, but our fascination with her is undeniably tied to her sex, and if that doesn't qualify her as a kind of accidental feminist icon, I'm not sure what does.</p>
+        <p>Continuing on, here is the data for the days our angler beat out Taylor. The streak begins, somewhat poetically, on Valentine's Day 2025. The biggest upset occurs the very next day, February 15th. The anglerfish holds the lead for four days before dropping back down to something much closer to its average, almost as quickly as the spike began.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" aria-label="Peak day value table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Anglerfish</th>
+              <th>Taylor Swift</th>
+              <th>Difference</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Feb 14, 2025</td><td>30263</td><td>28543</td><td>1720</td></tr>
+            <tr><td>Feb 15, 2025</td><td>38444</td><td>28869</td><td>9575</td></tr>
+            <tr><td>Feb 16, 2025</td><td>34278</td><td>24995</td><td>9283</td></tr>
+            <tr><td>Feb 17, 2025</td><td>26988</td><td>21267</td><td>5721</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="story-copy">
+        <p>This is enough for me to assume that this was a culturally significant event. What I was really wondering in all of this is whether it will actually help the black seadevil be conserved now that one of them has become a famous icon. This is where the conversation becomes much more nuanced.</p>
+        <p>To explore that, I wanted to compare her popularity spike to that of other "charismatic species." In conservation ecology, "charismatic" has a very specific meaning. These are the species that attract disproportionate funding and public support for conservation projects.</p>
+        <p>Everyone wants to save the tiger, but nobody is launching fundraising campaigns for the obscure, but critically-endangered beetle that happens to live in the same forest. That said, protecting the tiger's habitat can indirectly protect that beetle too, especially if funding is directed toward preserving the ecosystem as a whole.</p>
+        <p>A 2018 paper<sup>1</sup> identified the top charismatic animals based on different traits, like rarity, aesthetics, and, well, charisma. Of the top 20, four were marine animals. Three of those four had sufficient Wikipedia pageview data for comparison: the blue whale, the polar bear, and the great white shark. (Dolphins were included in the original list, but the pageview data was too inconsistent to use here, so they were excluded.)</p>
+        <p>Now there is something you may notice about this list of species: they are all LARGE. The blue whale is literally the largest animal (as formally defined) that has ever existed on the planet.</p>
+        <p>Being large is not a requirement for being characterized as charismatic. Nobody formally decides who the charismatic species get to be, per se; it's an informal title bestowed collectively by human preference, and organizations would be smart to request funding based on the most beloved animal in the habitat they're trying to protect.</p>
+        <p>Still, it is rather rare for a small, weird animal to be considered a "charismatic" species or an "ambassador" species. They are normally large vertebrates that we can somehow anthropomorphize. There are a few smaller exceptions, penguins, for example. Lots of people also seem to love waterbears (aka tardigrades), but they don't exactly need to be conserved, and will probably be on Earth long after humanity has died out.</p>
+        <p>The next graph shows the same anglerfish spike from the first chart, but this time with the other three charismatic marine species added in for comparison. The other prominent peak you're seeing corresponds to International Polar Bear Day in 2024. I couldn't find another event that made that particular year stand out, so I'm tentatively attributing it to effective marketing rather than ecological urgency.</p>
+      </div>
+    </section>
+
+    <section class="chart-card">
+      <h2>All Species Comparison</h2>
+      <p class="chart-caption">Click a line or legend item to focus one species and fade the rest.</p>
+      <p class="section-lead">Read this for relative scale over time: anglerfish spikes hard, but larger charismatic species hold more consistent attention.</p>
+      <div class="chart-controls">
+        <button id="reset-focus" type="button">Reset comparison focus</button>
+      </div>
+      <div class="chart-wrap">
+        <svg id="multi-chart" viewBox="0 0 960 520" role="img" aria-label="Comparison of all species search trends"></svg>
+        <div id="multi-tooltip" class="tooltip"></div>
+      </div>
+    </section>
+
+    <div class="story-copy">
+      <p>I averaged out the views for each species over the last three years, and even with its big ol' viewing streak, the anglerfish still comes in below polar bears, white sharks, and blue whales. This is unsurprising, given the general disinterest in anglerfish during the rest of recorded internet history. Still, I thought a better comparison might be a pound-for-pound analysis, since it's so rare for something so tiny to somehow end up as ambassador species.</p>
+      <p>In other words, given how small the black seadevil is, how much attention was it able to generate relative to its size?</p>
+      <p>The maximum weight of the other 3 animals was easy to find. However, I wasn't able to locate a reliable maximum weight for a black seadevil, so I gave a very, very conservative estimate. If you have ever seen a photo of one next to something with a relative scale, they are much smaller than expected. They could easily fit in the palm of your hand.</p>
+      <p>Very conservatively, I'd estimate that with a maximum size of roughly eight inches, female black seadevils cannot weigh more than two pounds soaking wet (which, hopefully, they normally are). Would I personally guess less than a pound? Probably. But we are scientists. And we speak conservatively. So for the sake of this visualization, we'll say the maximum weight of a black seadevil is approximately 2 lbs.</p>
+      <p>When you convert the data to pound-for-pound "punching power" (average views over the last three years divided by the maximum weight of each animal) you get a very different picture, as shown here.</p>
+    </div>
+
+    <section class="chart-card">
+      <h2>Animal Size in Pounds</h2>
+      <p class="table-caption">Species weight versus average daily attention (three-year average)</p>
+      <div class="table-wrap">
+        <table class="data-table" aria-label="Average daily views over three years">
+          <thead>
+            <tr>
+              <th>Species</th>
+              <th>Weight (lbs)</th>
+              <th>Average Daily Views</th>
+              <th>Days</th>
+            </tr>
+          </thead>
+          <tbody id="avg-daily-body"></tbody>
+        </table>
+      </div>
+      <div class="story-copy">
+        <p>The blue whale, largest animal in Earth's history, generates less than one hundredth of a view per pound.</p>
+        <p>The anglerfish?</p>
+        <p>Nearly 924 views per pound.</p>
+        <p>That means pound-for-pound, the black seadevil generates:</p>
+        <ul>
+          <li>~512x more attention per pound than a polar bear</li>
+          <li>~1,860x more than a great white</li>
+          <li>~120,000x more than a blue whale</li>
+        </ul>
+      </div>
+      <div class="chart-wrap">
+        <svg id="weight-bubble-chart" viewBox="0 0 960 600" role="img" aria-label="Circle size comparison of animal weights in pounds"></svg>
+        <div id="weight-bubble-tooltip" class="tooltip"></div>
+      </div>
+    </section>
+
+    <section class="chart-card">
+      <h2>Seabed Mining Awareness</h2>
+      <p class="chart-caption">Daily pageviews for Seabed mining and Anglerfish, with optional log scale.</p>
+      <p class="section-lead">Use the scale toggle to compare short-term spikes against the lower long-run baseline of the two topics.</p>
+      <div class="chart-controls" role="group" aria-label="Seabed mining chart scale toggle">
+        <span class="control-label">Y-scale</span>
+        <button id="seabed-scale-linear" class="is-active" type="button">Linear</button>
+        <button id="seabed-scale-log" type="button">Log</button>
+      </div>
+      <div class="chart-wrap">
+        <svg id="seabed-mining-chart" viewBox="0 0 960 520" role="img" aria-label="Seabed mining awareness chart"></svg>
+        <div id="seabed-mining-tooltip" class="tooltip"></div>
+      </div>
+      <p id="seabed-status" class="chart-subtitle"></p>
+    </section>
+
+    <section class="chart-card">
+      <h2>Seabed Mining Awareness (Weekly Average, Log Scale)</h2>
+      <p class="chart-caption">Average weekly pageviews for Seabed mining and Anglerfish, shown on a log scale.</p>
+      <p class="section-lead">This smoothed view makes sustained separation and convergence easier to read than daily volatility.</p>
+      <div class="chart-wrap">
+        <svg id="seabed-mining-weekly-chart" viewBox="0 0 960 520" role="img" aria-label="Weekly average seabed mining awareness chart in log scale"></svg>
+        <div id="seabed-mining-weekly-tooltip" class="tooltip"></div>
+      </div>
+    </section>
+
+    <div class="game-poll-layout" hidden>
+      <section class="chart-card game-chart-card">
+        <h2>Let's Play a Game...</h2>
+        <p class="chart-caption">Take a look at the chart below. Where do you see patterns and places where the data might correlate?</p>
+        <div class="chart-wrap">
+          <svg id="kendrick-angler-chart" viewBox="0 0 960 520" role="img" aria-label="Kendrick Lamar and Anglerfish pageviews chart in log scale"></svg>
+        </div>
+        <p id="kendrick-angler-status" class="chart-subtitle"></p>
+      </section>
+
+      <section class="chart-card poll-card poll-staged" id="kendrick-correlation-poll">
+        <div class="poll-content-swap">
+          <div id="kendrick-poll-panel" class="poll-panel">
+            <h2>Is There A Relationship Here?</h2>
+            <p class="poll-question">Poll: Take a look at the above chart, and make a guess. Is there a relationship between these two things?</p>
+            <div class="poll-options" role="group" aria-label="Correlation poll options">
+              <button type="button" class="poll-option" data-poll-choice="yes">Yes</button>
+              <button type="button" class="poll-option" data-poll-choice="no">No</button>
+            </div>
+            <div id="kendrick-poll-results" class="poll-results" hidden>
+              <div class="poll-result-row">
+                <span>Yes</span>
+                <div class="poll-result-bar"><div id="kendrick-poll-yes-fill" class="poll-result-fill"></div></div>
+                <span id="kendrick-poll-yes-label">0%</span>
+              </div>
+              <div class="poll-result-row">
+                <span>No</span>
+                <div class="poll-result-bar"><div id="kendrick-poll-no-fill" class="poll-result-fill no"></div></div>
+                <span id="kendrick-poll-no-label">0%</span>
+              </div>
+            </div>
+          </div>
+          <p id="kendrick-poll-message" class="poll-reveal-message" hidden></p>
+        </div>
+      </section>
+    </div>
+
+    <section class="chart-card necklace-card" id="lowercase-a-necklace-card" aria-label="Lowercase a necklace reveal" hidden>
+      <div class="necklace-stage" aria-hidden="true">
+        <div class="necklace-chain"></div>
+        <div class="necklace-charm">a</div>
+      </div>
+    </section>
+
+    <div class="story-copy">
+      <p>Let's get back to fish.</p>
+      <p>We don't really know why she left the deep and came to the surface. Could her habitat have been affected by a plume from an exploratory mining operation? What was happening down there that brought her upward against her own biology? Black seadevils are exquisitely adapted for life at depth and rapid ascent can physically damage their bodies. Surfacing is not casual for deep-sea animals.</p>
+      <p>Maybe we will never understand why our beautiful girl came up that day. Just to check it out? To find a new home? To find an isolated place to die? The last explanation is the most likely. Anything more imaginative would probably be us anthropomorphizing.</p>
+      <p>Maybe we'll never know. Maybe their entire habitat will be destroyed before scientist ever get the chance to see it, and they'll go extinct with only a single video of a live black seadevil on record. And as humans, we will be left wondering.</p>
+      <p>Maybe this was just a tiny, anomalous spike, and our gal's Wikipedia page will fall back into obscurity.</p>
+      <p>Or maybe, just maybe, something sticks. Maybe that flicker of curiosity in the public translates into funding. Maybe funding translates into protection. Maybe protection ripples outward to other species in the deep.</p>
+      <p>A quick time-series analysis shows that Wikipedia pageviews have largely returned to baseline. I don't know whether that means people stopped caring, or whether we're collectively carrying forward a slightly deeper awareness of the abyss.</p>
+      <p>So let's return to our initial question. Is an anglerfish more charismatic than Taylor Swift? Pretty definitively...no. I mean, what were you expecting? What we can definitively say is that for 4 days in 2025, more people were curious about an anglerfish than reading Taylor Swifts biography. I'd call that more of a fun fact than something scientifically telling. However, pound for pound, the way this fishy angler-gal captured our hearts for a brief moment in time undoubtedly pretty impressive. I can only hope that this spike of interest translates into some protection for her home.</p>
+    </div>
+
+    <p class="source-note">Sources: <code>data/pageviews-20230101-20260219.csv</code>, <code>data/TaylorSwift_Angler.csv</code>, and <code>SeabedMining_Anglerfish.csv</code>.</p>
+    <p class="source-note"><sup>1</sup> Citation: Albert C, Luque GM, Courchamp F (2018) The twenty most charismatic species. PLoS ONE 13(7): e0199149. https://doi.org/10.1371/journal.pone.0199149</p>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
