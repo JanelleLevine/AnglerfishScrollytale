@@ -729,8 +729,8 @@
       align-items: center;
       justify-content: space-between;
       font-family: var(--font-title);
-      font-size: clamp(28px, 3vw, 36px);
-      line-height: 1.12;
+      font-size: clamp(20px, 2.3vw, 24px);
+      line-height: 1.2;
       font-weight: 600;
       color: rgba(234, 246, 253, 0.98);
     }
@@ -746,7 +746,7 @@
     .methods-root > summary::after {
       content: "+";
       font-family: var(--font-display);
-      font-size: 26px;
+      font-size: 21px;
       font-weight: 500;
       line-height: 1;
       color: rgba(189, 223, 245, 0.95);
@@ -768,7 +768,7 @@
     .methods-intro {
       margin: 0 0 12px 10px;
       font-family: var(--font-ui);
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 0.02em;
       color: rgba(199, 229, 246, 0.9);
     }
@@ -795,7 +795,7 @@
       align-items: center;
       justify-content: space-between;
       font-family: var(--font-ui);
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
       letter-spacing: 0.03em;
       color: rgba(224, 241, 252, 0.98);
@@ -812,7 +812,7 @@
     .methods-block summary::after {
       content: "+";
       font-family: var(--font-display);
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 500;
       line-height: 1;
       color: rgba(189, 223, 245, 0.95);
@@ -834,8 +834,8 @@
     .methods-section p {
       margin: 0 0 12px;
       color: rgba(228, 242, 251, 0.96);
-      font-size: 15px;
-      line-height: 1.62;
+      font-size: 14px;
+      line-height: 1.58;
     }
 
     .methods-section ul,
@@ -847,7 +847,7 @@
     .methods-section li {
       margin: 0 0 7px;
       color: rgba(223, 240, 250, 0.96);
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.55;
     }
 
@@ -862,7 +862,7 @@
     .methods-section code {
       color: rgba(229, 245, 255, 0.98);
       font-family: var(--font-mono);
-      font-size: 13px;
+      font-size: 12px;
       background: rgba(25, 73, 125, 0.36);
       border: 1px solid rgba(171, 214, 239, 0.25);
       border-radius: 8px;
@@ -899,7 +899,7 @@
       padding-top: 14px;
       border-top: 1px solid rgba(173, 213, 232, 0.2);
       font-family: var(--font-ui);
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 0.02em;
       color: rgba(205, 232, 246, 0.95);
     }
@@ -1230,12 +1230,12 @@
       }
 
       .methods-root > summary {
-        font-size: 28px;
+        font-size: 22px;
       }
 
       .methods-section p,
       .methods-section li {
-        font-size: 15px;
+        font-size: 14px;
       }
 
       .methods-root-panel {
