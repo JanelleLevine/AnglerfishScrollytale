@@ -773,6 +773,26 @@
       color: rgba(199, 229, 246, 0.9);
     }
 
+    .methods-outline-item {
+      margin: 0 0 12px 10px;
+      padding: 0 0 0 14px;
+      border-left: 1px solid rgba(166, 210, 235, 0.32);
+    }
+
+    .methods-outline-item h3 {
+      margin: 0 0 6px;
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: rgba(224, 241, 252, 0.98);
+    }
+
+    .methods-outline-item .methods-panel {
+      padding: 0 0 0 8px;
+      border-top: 0;
+    }
+
     .methods-block {
       margin: 0 0 10px 10px;
       border: 1px solid rgba(171, 214, 239, 0.26);
@@ -1242,8 +1262,9 @@
         padding-left: 14px;
       }
 
-      .methods-block {
+      .methods-outline-item {
         margin-left: 0;
+        padding-left: 10px;
       }
 
       .methods-intro,
@@ -1252,8 +1273,8 @@
         margin-left: 0;
       }
 
-      .methods-panel {
-        padding-left: 16px;
+      .methods-outline-item .methods-panel {
+        padding-left: 6px;
       }
 
       .chart-wrap {
