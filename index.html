@@ -250,135 +250,145 @@
       <p>So let's return to our initial question. Is an anglerfish more charismatic than Taylor Swift? Pretty definitively...no. I mean, what were you expecting? What we can definitively say is that for 4 days in 2025, more people were curious about an anglerfish than reading Taylor Swifts biography. I'd call that more of a fun fact than something scientifically telling. However, pound for pound, the way this fishy angler-gal captured our hearts for a brief moment in time undoubtedly pretty impressive. I can only hope that this spike of interest translates into some protection for her home.</p>
     </div>
 
-    <section class="methods-section" aria-label="Methods">
-      <p class="methods-eyebrow">Methodological Appendix</p>
-      <h2>Methods</h2>
-      <p class="methods-intro">Expand each section for full methodological detail.</p>
+    <section class="methods-section" aria-label="Methods and citations">
+      <details class="methods-root" open>
+        <summary>Methods</summary>
+        <div class="methods-root-panel">
+          <p class="methods-intro">Expand each section for full methodological detail.</p>
 
-      <details class="methods-block">
-        <summary>Data Sources</summary>
-        <div class="methods-panel">
-        <p>Wikipedia pageview data were obtained using the Wikimedia Pageviews Analysis tool provided by the Wikimedia Foundation (<a href="https://pageviews.wmcloud.org/" target="_blank" rel="noopener noreferrer">https://pageviews.wmcloud.org/</a>). The tool provides daily counts of visits to individual Wikipedia articles based on publicly available server logs.</p>
-        <p>Pageview data were collected for the following English-language Wikipedia pages:</p>
-        <ul>
-          <li>Anglerfish</li>
-          <li>Taylor Swift</li>
-          <li>Blue whale</li>
-          <li>Great white shark</li>
-          <li>Polar bear</li>
-          <li>Seabed mining</li>
-        </ul>
-        <p>Daily pageviews were exported as CSV files and analyzed outside the platform.</p>
+          <details class="methods-block">
+            <summary>Data Sources</summary>
+            <div class="methods-panel">
+              <p>Wikipedia pageview data were obtained using the Wikimedia Pageviews Analysis tool provided by the Wikimedia Foundation (<a href="https://pageviews.wmcloud.org/" target="_blank" rel="noopener noreferrer">https://pageviews.wmcloud.org/</a>). The tool provides daily counts of visits to individual Wikipedia articles based on publicly available server logs.</p>
+              <p>Pageview data were collected for the following English-language Wikipedia pages:</p>
+              <ul>
+                <li>Anglerfish</li>
+                <li>Taylor Swift</li>
+                <li>Blue whale</li>
+                <li>Great white shark</li>
+                <li>Polar bear</li>
+                <li>Seabed mining</li>
+              </ul>
+              <p>Daily pageviews were exported as CSV files and analyzed outside the platform.</p>
+            </div>
+          </details>
+
+          <details class="methods-block">
+            <summary>Date Range</summary>
+            <div class="methods-panel">
+              <p>The primary dataset covers January 1, 2023 through February 19, 2026, yielding 1,146 daily observations for each page.</p>
+              <p>This time window was selected to provide:</p>
+              <ul>
+                <li>Multiple baseline years prior to the February 2025 event</li>
+                <li>Sufficient post-event data to observe whether interest returned to baseline</li>
+              </ul>
+              <p>For the seabed-mining comparison visualization, data begin slightly later (January 20, 2023) due to availability constraints for that query.</p>
+            </div>
+          </details>
+
+          <details class="methods-block">
+            <summary>Viral Event Identification</summary>
+            <div class="methods-panel">
+              <p>The analysis focuses on a spike in pageviews occurring in mid-February 2025, corresponding to the viral circulation of a photograph of a deep-sea black seadevil anglerfish recorded near Tenerife in the Canary Islands by the marine research group Condrik Tenerife.</p>
+              <p>Peak traffic occurred on:</p>
+              <ul>
+                <li>February 15, 2025 - 38,444 pageviews</li>
+              </ul>
+              <p>The event window was defined as the four-day period during which anglerfish pageviews exceeded those of Taylor Swift:</p>
+              <ul>
+                <li>February 14, 2025</li>
+                <li>February 15, 2025</li>
+                <li>February 16, 2025</li>
+                <li>February 17, 2025</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="methods-block">
+            <summary>Comparative Attention Analysis</summary>
+            <div class="methods-panel">
+              <p>To contextualize the anglerfish spike, pageview counts were compared with those of Taylor Swift as a baseline measure of high internet attention.</p>
+              <p>This comparison provides a scale reference for interpreting the magnitude of the anglerfish spike relative to a consistently high-traffic topic.</p>
+            </div>
+          </details>
+
+          <details class="methods-block">
+            <summary>Charismatic Species Comparison</summary>
+            <div class="methods-panel">
+              <p>To examine how attention to the anglerfish compares with well-known conservation icons, three marine charismatic species were included in the analysis:</p>
+              <ul>
+                <li>Blue whale</li>
+                <li>Great white shark</li>
+                <li>Polar bear</li>
+              </ul>
+              <p>These species were selected based on the "charismatic megafauna" framework described in:</p>
+              <p>Albert, C., Luque, G., &amp; Courchamp, F. (2018). The twenty most charismatic species. PLoS ONE 13(7): e0199149.</p>
+              <p>Average daily pageviews were calculated across the full study period for each species.</p>
+            </div>
+          </details>
+
+          <details class="methods-block">
+            <summary>Pound-for-Pound Attention Metric</summary>
+            <div class="methods-panel">
+              <p>To explore whether smaller animals can generate disproportionate public interest, a simple "attention density" metric was calculated:</p>
+              <p><code>views per pound = average daily Wikipedia pageviews / maximum species weight (lbs)</code></p>
+              <p>Maximum weights were drawn from widely reported biological estimates:</p>
+              <div class="table-wrap methods-table-wrap">
+                <table class="data-table methods-table" aria-label="Species maximum weight assumptions">
+                  <thead>
+                    <tr>
+                      <th>Species</th>
+                      <th>Approx. Maximum Weight</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Blue whale</td><td>~400,000 lbs</td></tr>
+                    <tr><td>Great white shark</td><td>~5,501 lbs</td></tr>
+                    <tr><td>Polar bear</td><td>~1,760 lbs</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Because reliable weight data for black seadevil anglerfish are scarce, a conservative estimate of 2 pounds was used based on maximum reported body length (~8 inches). This estimate likely overstates the true mass of the species, making the resulting views-per-pound estimate conservative.</p>
+            </div>
+          </details>
+
+          <details class="methods-block">
+            <summary>Data Processing</summary>
+            <div class="methods-panel">
+              <p>All datasets were exported as CSV files and analyzed using standard time-series visualization and aggregation methods. Analyses included:</p>
+              <ul>
+                <li>Daily pageview comparisons</li>
+                <li>Three-year average pageviews per species</li>
+                <li>Peak event identification</li>
+                <li>Weekly averaging for long-term trend comparison</li>
+                <li>Log-scale visualization for comparing low-traffic topics (e.g., seabed mining)</li>
+              </ul>
+              <p>Charts were rendered using interactive web visualization tools to allow zooming, hover annotation, and species filtering.</p>
+            </div>
+          </details>
+
+          <details class="methods-block">
+            <summary>Limitations</summary>
+            <div class="methods-panel">
+              <p>Wikipedia pageviews measure public curiosity, not conservation outcomes. A spike in search activity does not necessarily translate into funding, policy change, or ecological protection.</p>
+              <p>Additionally, the pound-for-pound attention metric is an illustrative heuristic rather than a formal ecological measure.</p>
+            </div>
+          </details>
+
+          <p class="methods-closer">All analysis and visualizations were produced by the Museum of Ocean Science using publicly available Wikimedia data.</p>
         </div>
       </details>
 
-      <details class="methods-block">
-        <summary>Date Range</summary>
-        <div class="methods-panel">
-        <p>The primary dataset covers January 1, 2023 through February 19, 2026, yielding 1,146 daily observations for each page.</p>
-        <p>This time window was selected to provide:</p>
-        <ul>
-          <li>Multiple baseline years prior to the February 2025 event</li>
-          <li>Sufficient post-event data to observe whether interest returned to baseline</li>
-        </ul>
-        <p>For the seabed-mining comparison visualization, data begin slightly later (January 20, 2023) due to availability constraints for that query.</p>
+      <details class="methods-root methods-citations">
+        <summary>Citations</summary>
+        <div class="methods-root-panel">
+          <ol class="methods-citation-list">
+            <li>Sources: <code>data/pageviews-20230101-20260219.csv</code>, <code>data/TaylorSwift_Angler.csv</code>, and <code>data/SeabedMining_Anglerfish.csv</code>.</li>
+            <li>Albert C, Luque GM, Courchamp F (2018) The twenty most charismatic species. PLoS ONE 13(7): e0199149. <a href="https://doi.org/10.1371/journal.pone.0199149" target="_blank" rel="noopener noreferrer">https://doi.org/10.1371/journal.pone.0199149</a></li>
+          </ol>
         </div>
       </details>
-
-      <details class="methods-block">
-        <summary>Viral Event Identification</summary>
-        <div class="methods-panel">
-        <p>The analysis focuses on a spike in pageviews occurring in mid-February 2025, corresponding to the viral circulation of a photograph of a deep-sea black seadevil anglerfish recorded near Tenerife in the Canary Islands by the marine research group Condrik Tenerife.</p>
-        <p>Peak traffic occurred on:</p>
-        <ul>
-          <li>February 15, 2025 - 38,444 pageviews</li>
-        </ul>
-        <p>The event window was defined as the four-day period during which anglerfish pageviews exceeded those of Taylor Swift:</p>
-        <ul>
-          <li>February 14, 2025</li>
-          <li>February 15, 2025</li>
-          <li>February 16, 2025</li>
-          <li>February 17, 2025</li>
-        </ul>
-        </div>
-      </details>
-
-      <details class="methods-block">
-        <summary>Comparative Attention Analysis</summary>
-        <div class="methods-panel">
-        <p>To contextualize the anglerfish spike, pageview counts were compared with those of Taylor Swift as a baseline measure of high internet attention.</p>
-        <p>This comparison provides a scale reference for interpreting the magnitude of the anglerfish spike relative to a consistently high-traffic topic.</p>
-        </div>
-      </details>
-
-      <details class="methods-block">
-        <summary>Charismatic Species Comparison</summary>
-        <div class="methods-panel">
-        <p>To examine how attention to the anglerfish compares with well-known conservation icons, three marine charismatic species were included in the analysis:</p>
-        <ul>
-          <li>Blue whale</li>
-          <li>Great white shark</li>
-          <li>Polar bear</li>
-        </ul>
-        <p>These species were selected based on the "charismatic megafauna" framework described in:</p>
-        <p>Albert, C., Luque, G., &amp; Courchamp, F. (2018). The twenty most charismatic species. PLoS ONE 13(7): e0199149.</p>
-        <p>Average daily pageviews were calculated across the full study period for each species.</p>
-        </div>
-      </details>
-
-      <details class="methods-block">
-        <summary>Pound-for-Pound Attention Metric</summary>
-        <div class="methods-panel">
-        <p>To explore whether smaller animals can generate disproportionate public interest, a simple "attention density" metric was calculated:</p>
-        <p><code>views per pound = average daily Wikipedia pageviews / maximum species weight (lbs)</code></p>
-        <p>Maximum weights were drawn from widely reported biological estimates:</p>
-        <div class="table-wrap methods-table-wrap">
-          <table class="data-table methods-table" aria-label="Species maximum weight assumptions">
-            <thead>
-              <tr>
-                <th>Species</th>
-                <th>Approx. Maximum Weight</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Blue whale</td><td>~400,000 lbs</td></tr>
-              <tr><td>Great white shark</td><td>~5,501 lbs</td></tr>
-              <tr><td>Polar bear</td><td>~1,760 lbs</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p>Because reliable weight data for black seadevil anglerfish are scarce, a conservative estimate of 2 pounds was used based on maximum reported body length (~8 inches). This estimate likely overstates the true mass of the species, making the resulting views-per-pound estimate conservative.</p>
-        </div>
-      </details>
-
-      <details class="methods-block">
-        <summary>Data Processing</summary>
-        <div class="methods-panel">
-        <p>All datasets were exported as CSV files and analyzed using standard time-series visualization and aggregation methods. Analyses included:</p>
-        <ul>
-          <li>Daily pageview comparisons</li>
-          <li>Three-year average pageviews per species</li>
-          <li>Peak event identification</li>
-          <li>Weekly averaging for long-term trend comparison</li>
-          <li>Log-scale visualization for comparing low-traffic topics (e.g., seabed mining)</li>
-        </ul>
-        <p>Charts were rendered using interactive web visualization tools to allow zooming, hover annotation, and species filtering.</p>
-        </div>
-      </details>
-
-      <details class="methods-block">
-        <summary>Limitations</summary>
-        <div class="methods-panel">
-        <p>Wikipedia pageviews measure public curiosity, not conservation outcomes. A spike in search activity does not necessarily translate into funding, policy change, or ecological protection.</p>
-        <p>Additionally, the pound-for-pound attention metric is an illustrative heuristic rather than a formal ecological measure.</p>
-        </div>
-      </details>
-
-      <p class="methods-closer">All analysis and visualizations were produced by the Museum of Ocean Science using publicly available Wikimedia data.</p>
     </section>
-
-    <p class="source-note">Sources: <code>data/pageviews-20230101-20260219.csv</code>, <code>data/TaylorSwift_Angler.csv</code>, and <code>SeabedMining_Anglerfish.csv</code>.</p>
-    <p class="source-note"><sup>1</sup> Citation: Albert C, Luque GM, Courchamp F (2018) The twenty most charismatic species. PLoS ONE 13(7): e0199149. https://doi.org/10.1371/journal.pone.0199149</p>
   </div>
 
   <script src="https://d3js.org/d3.v7.min.js" defer></script>
