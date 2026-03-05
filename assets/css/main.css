@@ -566,13 +566,14 @@
       left: 50%;
       width: 100vw;
       transform: translateX(-50%);
-      top: -24px;
+      top: 0;
       bottom: 0;
       background: linear-gradient(
         180deg,
-        rgba(18, 68, 124, 0.52) 0%,
-        rgba(12, 46, 84, 0.72) 42%,
-        rgba(6, 20, 36, 0.9) 74%,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.08) 36%,
+        rgba(0, 0, 0, 0.34) 62%,
+        rgba(0, 0, 0, 0.74) 82%,
         #000 100%
       );
       pointer-events: none;
