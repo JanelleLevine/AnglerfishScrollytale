@@ -684,6 +684,160 @@
       max-width: var(--reading-measure);
     }
 
+    .methods-section {
+      margin: 40px auto 6px;
+      max-width: var(--reading-measure);
+      border-radius: 22px;
+      border: 1px solid rgba(171, 214, 239, 0.36);
+      background:
+        linear-gradient(180deg, rgba(10, 40, 78, 0.92), rgba(6, 26, 50, 0.9)),
+        radial-gradient(circle at 12% 8%, rgba(127, 196, 255, 0.2), transparent 54%);
+      padding: clamp(22px, 3vw, 34px) clamp(16px, 2.5vw, 30px);
+      box-shadow: 0 22px 54px rgba(2, 12, 28, 0.42);
+    }
+
+    .methods-section h2 {
+      margin-bottom: 18px;
+      max-width: none;
+      font-size: clamp(28px, 3vw, 36px);
+    }
+
+    .methods-eyebrow {
+      margin: 0 0 8px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(194, 226, 244, 0.86);
+    }
+
+    .methods-intro {
+      margin: 0 0 14px;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      color: rgba(199, 229, 246, 0.9);
+    }
+
+    .methods-block {
+      margin: 0 0 10px;
+      border: 1px solid rgba(171, 214, 239, 0.26);
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(11, 42, 82, 0.38), rgba(8, 30, 57, 0.32));
+      overflow: hidden;
+    }
+
+    .methods-block[open] {
+      border-color: rgba(186, 223, 245, 0.45);
+      background: linear-gradient(180deg, rgba(13, 48, 93, 0.5), rgba(8, 33, 64, 0.46));
+    }
+
+    .methods-block summary {
+      list-style: none;
+      margin: 0;
+      padding: 12px 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-ui);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: rgba(224, 241, 252, 0.98);
+    }
+
+    .methods-block summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .methods-block summary::after {
+      content: "+";
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1;
+      color: rgba(189, 223, 245, 0.95);
+      transform: rotate(0deg);
+      transition: transform 160ms ease;
+      margin-left: 12px;
+      flex-shrink: 0;
+    }
+
+    .methods-block[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .methods-panel {
+      padding: 2px 14px 14px;
+      border-top: 1px solid rgba(166, 210, 235, 0.2);
+    }
+
+    .methods-section p {
+      margin: 0 0 12px;
+      color: rgba(228, 242, 251, 0.96);
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    .methods-section ul {
+      margin: 0 0 12px;
+      padding-left: 1.2rem;
+    }
+
+    .methods-section li {
+      margin: 0 0 7px;
+      color: rgba(223, 240, 250, 0.96);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .methods-section code {
+      color: rgba(229, 245, 255, 0.98);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      background: rgba(25, 73, 125, 0.36);
+      border: 1px solid rgba(171, 214, 239, 0.25);
+      border-radius: 8px;
+      padding: 1px 6px;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    .methods-section a {
+      color: rgba(157, 214, 255, 0.96);
+    }
+
+    .methods-section a:hover {
+      color: rgba(199, 236, 255, 0.98);
+    }
+
+    .methods-table-wrap {
+      margin-top: 8px;
+      margin-bottom: 12px;
+      max-width: none;
+    }
+
+    .methods-table {
+      border-radius: 12px;
+    }
+
+    .methods-table th:last-child,
+    .methods-table td:last-child {
+      text-align: left;
+    }
+
+    .methods-closer {
+      margin: 10px 0 0;
+      padding-top: 14px;
+      border-top: 1px solid rgba(173, 213, 232, 0.2);
+      font-family: var(--font-ui);
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      color: rgba(205, 232, 246, 0.95);
+    }
+
     .tldr-card {
       margin: 10px auto 20px;
       max-width: var(--reading-measure);
@@ -1002,6 +1156,21 @@
         max-width: 100%;
         font-size: 16px;
         line-height: 1.72;
+      }
+
+      .methods-section {
+        margin-top: 30px;
+        border-radius: 16px;
+        padding: 20px 14px;
+      }
+
+      .methods-section h2 {
+        font-size: 28px;
+      }
+
+      .methods-section p,
+      .methods-section li {
+        font-size: 15px;
       }
 
       .chart-wrap {
