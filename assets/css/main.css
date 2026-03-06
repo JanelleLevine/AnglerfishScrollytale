@@ -891,6 +891,52 @@
       word-break: break-word;
     }
 
+    .methods-equation {
+      margin: 0 0 12px 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(228, 242, 251, 0.98);
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .methods-eq-lhs {
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    .methods-eq-equals {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .methods-eq-frac {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: min(360px, 100%);
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .methods-eq-num,
+    .methods-eq-den {
+      display: block;
+      width: 100%;
+      padding: 0 8px;
+    }
+
+    .methods-eq-num {
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgba(199, 229, 246, 0.55);
+    }
+
+    .methods-eq-den {
+      padding-top: 5px;
+    }
+
     .methods-section a {
       color: rgba(157, 214, 255, 0.96);
     }
@@ -1275,6 +1321,22 @@
 
       .methods-outline-item .methods-panel {
         padding-left: 6px;
+      }
+
+      .methods-equation {
+        margin-left: 0;
+        flex-wrap: wrap;
+        gap: 6px;
+        font-size: 13px;
+      }
+
+      .methods-eq-equals {
+        font-size: 16px;
+      }
+
+      .methods-eq-frac {
+        min-width: 0;
+        width: 100%;
       }
 
       .chart-wrap {
