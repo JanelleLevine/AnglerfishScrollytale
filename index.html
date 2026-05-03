@@ -169,31 +169,7 @@
       </div>
     </section>
 
-    <section class="chart-card">
-      <h2>Seabed Mining Awareness</h2>
-      <p class="chart-caption">Daily pageviews for Seabed mining and Anglerfish, with optional log scale.</p>
-      <p class="section-lead">Use the scale toggle to compare short-term spikes against the lower long-run baseline of the two topics.</p>
-      <div class="chart-controls" role="group" aria-label="Seabed mining chart scale toggle">
-        <span class="control-label">Y-scale</span>
-        <button id="seabed-scale-linear" class="is-active" type="button">Linear</button>
-        <button id="seabed-scale-log" type="button">Log</button>
-      </div>
-      <div class="chart-wrap">
-        <svg id="seabed-mining-chart" viewBox="0 0 960 520" role="img" aria-label="Seabed mining awareness chart"></svg>
-        <div id="seabed-mining-tooltip" class="tooltip"></div>
-      </div>
-      <p id="seabed-status" class="chart-subtitle"></p>
-    </section>
-
-    <section class="chart-card">
-      <h2>Seabed Mining Awareness (Weekly Average, Log Scale)</h2>
-      <p class="chart-caption">Average weekly pageviews for Seabed mining and Anglerfish, shown on a log scale.</p>
-      <p class="section-lead">This smoothed view makes sustained separation and convergence easier to read than daily volatility.</p>
-      <div class="chart-wrap">
-        <svg id="seabed-mining-weekly-chart" viewBox="0 0 960 520" role="img" aria-label="Weekly average seabed mining awareness chart in log scale"></svg>
-        <div id="seabed-mining-weekly-tooltip" class="tooltip"></div>
-      </div>
-    </section>
+    <!-- Seabed mining awareness sections hidden for this cut. -->
 
     <div class="game-poll-layout" hidden>
       <section class="chart-card game-chart-card">
@@ -239,19 +215,20 @@
       </div>
     </section>
 
-    <div class="story-copy story-copy-final">
-      <p>Let's get back to fish.</p>
-      <p>We don't really know why she left the deep and came to the surface. Could her habitat have been affected by a plume from an exploratory mining operation? What was happening down there that brought her upward against her own biology? Black seadevils are exquisitely adapted for life at depth and rapid ascent can physically damage their bodies. Surfacing is not casual for deep-sea animals.</p>
-      <p>Maybe we will never understand why our beautiful girl came up that day. Just to check it out? To find a new home? To find an isolated place to die? The last explanation is the most likely. Anything more imaginative would probably be us anthropomorphizing.</p>
-      <p>Maybe we'll never know. Maybe their entire habitat will be destroyed before scientist ever get the chance to see it, and they'll go extinct with only a single video of a live black seadevil on record. And as humans, we will be left wondering.</p>
-      <p>Maybe this was just a tiny, anomalous spike, and our gal's Wikipedia page will fall back into obscurity.</p>
-      <p>Or maybe, just maybe, something sticks. Maybe that flicker of curiosity in the public translates into funding. Maybe funding translates into protection. Maybe protection ripples outward to other species in the deep.</p>
-      <p>A quick time-series analysis shows that Wikipedia pageviews have largely returned to baseline. I don't know whether that means people stopped caring, or whether we're collectively carrying forward a slightly deeper awareness of the abyss.</p>
-      <p>So let's return to our initial question. Is an anglerfish more charismatic than Taylor Swift? Pretty definitively...no. I mean, what were you expecting? What we can definitively say is that for 4 days in 2025, more people were curious about an anglerfish than reading Taylor Swifts biography. I'd call that more of a fun fact than something scientifically telling. However, pound for pound, the way this fishy angler-gal captured our hearts for a brief moment in time undoubtedly pretty impressive. I can only hope that this spike of interest translates into some protection for her home.</p>
-    </div>
+    <section class="story-copy story-copy-final" aria-label="Closing reflection">
+      <p class="story-copy-final-kicker">Closing Reflection</p>
+      <h2>What Remains After the Spike</h2>
+      <p class="section-lead">The chart comes back down. The question does not.</p>
+      <p>So let's return to the original question. Is an anglerfish more charismatic than Taylor Swift? Clearly not. But for four days in February 2025, more people were curious about an anglerfish than reading Taylor Swift's biography, and that brief reversal says something real about how quickly public attention can flare around a species most people would otherwise never notice.</p>
+      <p>Most viral moments disappear as fast as they arrive. They do not automatically become policy, protection, or long-term care. But they can open a small window. They can give people a reason to look more closely at a place they have ignored, or to care about an animal that would otherwise remain abstract, invisible, and far below the surface.</p>
+      <p>If even a fraction of that curiosity sticks, then the spike mattered. Not because the anglerfish became more famous than a pop star, but because for a brief moment the deep sea forced its way into public attention. Sometimes that is where change starts: not with certainty, but with fascination strong enough to make people keep looking.</p>
+      <div class="article-endcap" aria-hidden="true">
+        <span class="article-endcap-orb"></span>
+      </div>
+    </section>
 
     <section class="methods-section" aria-label="Methods and citations">
-      <details class="methods-root" open>
+      <details class="methods-root">
         <summary>Methods</summary>
         <div class="methods-root-panel">
           <p class="methods-intro">Expanded methodological outline.</p>
@@ -267,7 +244,6 @@
                 <li>Blue whale</li>
                 <li>Great white shark</li>
                 <li>Polar bear</li>
-                <li>Seabed mining</li>
               </ul>
               <p>Daily pageviews were exported as CSV files and analyzed outside the platform.</p>
             </div>
@@ -282,7 +258,6 @@
                 <li>Multiple baseline years prior to the February 2025 event</li>
                 <li>Sufficient post-event data to observe whether interest returned to baseline</li>
               </ul>
-              <p>For the seabed-mining comparison visualization, data begin slightly later (January 20, 2023) due to availability constraints for that query.</p>
             </div>
           </div>
 
@@ -368,8 +343,6 @@
                 <li>Daily pageview comparisons</li>
                 <li>Three-year average pageviews per species</li>
                 <li>Peak event identification</li>
-                <li>Weekly averaging for long-term trend comparison</li>
-                <li>Log-scale visualization for comparing low-traffic topics (e.g., seabed mining)</li>
               </ul>
               <p>Charts were rendered using interactive web visualization tools to allow zooming, hover annotation, and species filtering.</p>
             </div>

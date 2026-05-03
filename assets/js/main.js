@@ -174,7 +174,6 @@
       runOnceWhenVisible("#multi-chart", () => drawComparisonChart(parsedRows, metricNames));
       runOnceWhenVisible("#weight-bubble-chart", () => drawWeightBubbleChart(parsedRows));
       renderAverageDailyTable(parsedRows, metricNames);
-      prefetchCsvCandidates(seabedCsvCandidates, "seabed mining CSV");
       prefetchCsvCandidates(kendrickCsvCandidates, "Kendrick vs Angler CSV");
 
       status.text(`Loaded ${anglerfishData.length} daily points from ${formatDate(d3.min(anglerfishData, d => d.date))} to ${formatDate(d3.max(anglerfishData, d => d.date))}.`);
@@ -182,46 +181,7 @@
       status.style("color", "#ffb4a2").text(`Failed to load data: ${error.message}`);
     });
 
-    runOnceWhenVisible("#seabed-mining-chart", () => {
-      loadFirstAvailableCsv(seabedCsvCandidates, "seabed mining CSV")
-        .then(rawSeabedData => {
-          const seabedColumn = rawSeabedData.columns.find(name => name.toLowerCase().replace(/\s+/g, "") === "seabedmining");
-          const anglerColumn = rawSeabedData.columns.find(name => name.toLowerCase().replace(/\s+/g, "") === "anglerfish");
-
-          if (!seabedColumn || !anglerColumn) {
-            throw new Error("SeabedMining_Anglerfish.csv must include Date, Seabed mining, and Anglerfish columns.");
-          }
-
-          const seabedData = rawSeabedData
-            .map(row => ({
-              date: parseDate(row.Date),
-              seabedMining: Number(row[seabedColumn]),
-              anglerfish: Number(row[anglerColumn])
-            }))
-            .filter(row => row.date && (Number.isFinite(row.seabedMining) || Number.isFinite(row.anglerfish)))
-            .sort((a, b) => a.date - b.date);
-
-          if (seabedData.length === 0) {
-            throw new Error("No valid Date/Seabed mining/Anglerfish rows were found.");
-          }
-
-          drawSeabedMiningChart(seabedData);
-          drawSeabedMiningWeeklyLogChart(seabedData);
-
-          if (!seabedStatus.empty()) {
-            seabedStatus
-              .style("color", "var(--text-soft)")
-              .text(`Loaded ${seabedData.length} points from ${formatDate(d3.min(seabedData, d => d.date))} to ${formatDate(d3.max(seabedData, d => d.date))}.`);
-          }
-        })
-        .catch(error => {
-          if (!seabedStatus.empty()) {
-            seabedStatus
-              .style("color", "#ffb4a2")
-              .text(`Seabed chart unavailable: ${error.message}`);
-          }
-        });
-    });
+    // Seabed mining charts are intentionally hidden in the current cut.
 
     runOnceWhenVisible("#kendrick-angler-chart", () => {
       loadFirstAvailableCsv(kendrickCsvCandidates, "Kendrick vs Angler CSV")
