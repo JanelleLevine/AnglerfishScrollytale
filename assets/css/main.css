@@ -244,13 +244,13 @@
 
     .title-card-content .tldr-card ul {
       color: rgba(220, 238, 250, 0.86);
-      font-size: clamp(13px, 1.2vw, 14px);
+      font-size: clamp(11px, 0.98vw, 12px);
       margin: 0;
       text-align: left;
       max-width: none;
       font-family: var(--font-ui);
       font-style: italic;
-      line-height: 1.5;
+      line-height: 1.4;
       padding-left: 1rem;
     }
 
@@ -402,23 +402,34 @@
     }
 
     .chart-card {
-      margin-top: 18px;
+      margin-top: 38px;
       border: none;
       border-radius: 0;
       background: none;
       box-shadow: none;
       backdrop-filter: none;
-      padding: 0;
+      padding: 28px 0 0;
     }
 
     h2 {
       margin: 0 auto;
       font-family: var(--font-title);
-      font-size: clamp(22px, 2.5vw, 30px);
-      line-height: 1.16;
-      font-weight: 600;
-      letter-spacing: 0;
+      font-size: clamp(20px, 2.2vw, 27px);
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: 0.015em;
+      color: rgba(244, 251, 255, 0.98);
       max-width: var(--reading-measure);
+      padding-bottom: 12px;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 1px;
+      margin-top: 10px;
+      background: linear-gradient(90deg, rgba(244, 251, 255, 0.9), rgba(170, 214, 242, 0.36), transparent);
     }
 
     .chart-subtitle {
@@ -436,25 +447,34 @@
     .table-caption {
       max-width: var(--reading-measure);
       text-align: left;
-      font-family: var(--font-ui);
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
-      color: rgba(208, 229, 245, 0.88);
-      padding-left: 0.88rem;
-      border-left: 2px solid rgba(167, 204, 236, 0.66);
+      font-family: var(--font-mono);
+      letter-spacing: 0.01em;
+      color: rgba(210, 229, 241, 0.58);
+      padding: 0;
+      border: 0;
     }
 
     .chart-caption {
-      margin: 8px auto 12px;
+      margin: 8px auto 14px;
       font-size: 11px;
-      line-height: 1.42;
+      line-height: 1.58;
     }
 
     .table-caption {
-      margin: 14px auto 10px;
+      margin: 8px auto 14px;
+      font-size: 11px;
+      line-height: 1.58;
+    }
+
+    .caption-label {
+      display: inline-block;
+      margin-right: 0.45rem;
+      font-family: var(--font-ui);
       font-size: 10px;
-      line-height: 1.4;
-      color: rgba(214, 232, 246, 0.92);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(223, 238, 247, 0.74);
     }
 
     .section-lead {
@@ -560,15 +580,6 @@
       position: relative;
     }
 
-    .story-copy-final::before {
-      content: "";
-      display: block;
-      width: min(100%, var(--reading-measure));
-      height: 1px;
-      margin: 0 auto 20px;
-      background: linear-gradient(90deg, transparent, rgba(181, 221, 246, 0.75), transparent);
-    }
-
     .story-copy-final > h2,
     .story-copy-final > p,
     .story-copy-final > div {
@@ -601,8 +612,8 @@
     }
 
     .article-endcap {
-      width: 90px;
-      height: 120px;
+      width: 24px;
+      height: 74px;
       margin: 26px auto 18px;
       position: relative;
     }
@@ -612,39 +623,37 @@
       position: absolute;
       left: 50%;
       top: 0;
-      width: 1px;
-      height: 68px;
+      width: 5px;
+      height: 5px;
       transform: translateX(-50%);
-      background: linear-gradient(180deg, rgba(200, 231, 247, 0), rgba(188, 224, 244, 0.36) 24%, rgba(155, 211, 242, 0.78) 100%);
+      border-radius: 999px;
+      background: rgba(250, 253, 255, 0.78);
+      box-shadow: 0 0 10px rgba(246, 251, 255, 0.16);
     }
 
     .article-endcap::after {
       content: "";
       position: absolute;
       left: 50%;
-      bottom: 4px;
-      width: 88px;
-      height: 38px;
+      top: 22px;
+      width: 8px;
+      height: 8px;
       transform: translateX(-50%);
       border-radius: 999px;
-      background: radial-gradient(circle, rgba(91, 185, 240, 0.2), rgba(91, 185, 240, 0.02) 58%, transparent 72%);
-      filter: blur(6px);
-      opacity: 0.95;
+      background: rgba(250, 253, 255, 0.88);
+      box-shadow: 0 0 12px rgba(246, 251, 255, 0.18);
     }
 
     .article-endcap-orb {
       position: absolute;
       left: 50%;
-      bottom: 18px;
-      width: 18px;
-      height: 18px;
+      top: 44px;
+      width: 12px;
+      height: 12px;
       transform: translateX(-50%);
       border-radius: 999px;
-      background: radial-gradient(circle at 34% 30%, rgba(255, 251, 236, 0.98) 0%, rgba(194, 242, 255, 0.94) 34%, rgba(114, 206, 255, 0.92) 62%, rgba(64, 166, 229, 0.82) 100%);
-      box-shadow:
-        0 0 0 1px rgba(219, 245, 255, 0.6),
-        0 0 18px rgba(135, 220, 255, 0.92),
-        0 0 42px rgba(72, 176, 235, 0.48);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 0 14px rgba(246, 251, 255, 0.22);
     }
 
     .lorem-copy {
@@ -1362,7 +1371,11 @@
       }
 
       .chart-caption,
-      .table-caption,
+      .table-caption {
+        font-size: 10px;
+        max-width: 100%;
+      }
+
       .section-lead {
         font-size: 13px;
         max-width: 100%;

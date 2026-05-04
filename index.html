@@ -6,8 +6,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" href="assets/css/main.css" as="style">
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="preload" href="assets/css/main.css?v=20260503-9" as="style">
+  <link rel="stylesheet" href="assets/css/main.css?v=20260503-9">
 </head>
 <body>
   <div class="page-shell">
@@ -35,14 +35,14 @@
       <section class="tldr-card" aria-label="Quick summary">
         <p class="tldr-label">TL;DR</p>
         <ul>
-          <li>A February 2025 black seadevil photo drove a sharp anglerfish attention spike.</li>
-          <li>For four days (Feb 14-17, 2025), anglerfish pageviews beat Taylor Swift pageviews.</li>
-          <li>The surge was real but brief, and the open question is whether awareness can turn into conservation action.</li>
+          <li>In 2025, a black seadevil image drove a sharp, but short-lived, spike in public attention.</li>
+          <li>For four days, the anglerfish Wikipedia page outperformed Taylor Swift's.</li>
+          <li>The deeper question is whether that fascination could translate into lasting conservation interest.</li>
         </ul>
       </section>
       <div class="story-copy">
         <p>In 2025, a deep-sea anglerfish known as a black seadevil captured the hearts of people around the world when an organization called Condrik Tenerife released a rare image of the species taken off the coast of the Canary Islands. The photo spread rapidly across social media and news outlets, transforming one of the oceanâ€™s most elusive predators into an unlikely internet celebrity.</p>
-        <p>When she captured global attention, it made me wonder: does viral marine imagery actually translate into real-world conservation and protection?</p>
+        <p>Part of what made the image so arresting is that black seadevils are typically documented between roughly 100 to 4,500 meters, making her very far from home, indeed. When she captured global attention, it made me wonder: does viral marine imagery actually translate into real-world conservation and protection?</p>
         <p>The first thing I did was turn to data. Using the Wikimedia Pageviews Analysis tool (pageviews.wmcloud.org), I pulled three years of traffic data for the â€œAnglerfishâ€ Wikipedia page. In the chart below, days are plotted along the x-axis and Wikipedia pageviews are along the y-axis. It only takes a quick glance to see the surge of interest that this single photo caused. At its peak, the Anglerfish Wikipedia page was visited 38,444 times in a single day.</p>
       </div>
     </header>
@@ -53,6 +53,7 @@
         <svg id="single-chart" viewBox="0 0 960 520" role="img" aria-label="Anglerfish daily search trend"></svg>
         <div id="single-tooltip" class="tooltip"></div>
       </div>
+      <p class="chart-caption"><span class="caption-label">Figure 1.</span>Daily Wikipedia pageviews for the Anglerfish article from January 1, 2023 through February 19, 2026, highlighting the February 2025 black seadevil attention spike.</p>
     </section>
 
     <div class="story-copy">
@@ -67,14 +68,16 @@
     </div>
 
     <section class="chart-card">
-      <h2>Taylor Swift versus The Fish</h2>
+      <h2>Taylor vs. Fish</h2>
       <div class="chart-wrap">
         <svg id="single-remake-chart" viewBox="0 0 960 520" role="img" aria-label="Second anglerfish daily search trend chart"></svg>
         <div id="single-remake-tooltip" class="tooltip"></div>
       </div>
+      <p class="chart-caption"><span class="caption-label">Figure 2.</span>Comparative daily Wikipedia pageviews for Anglerfish and Taylor Swift, showing the four-day interval in February 2025 when anglerfish attention briefly exceeded Taylor Swift.</p>
       <div class="story-copy">
         <p>Here is the data for the days our angler beat out Taylor. The streak begins, somewhat poetically, on Valentine's Day 2025. The biggest upset occurs the very next day, February 15th. The anglerfish holds the lead for four days before dropping back down to something much closer to its average, almost as quickly as the spike began.</p>
       </div>
+      <p class="table-caption"><span class="caption-label">Table 1.</span>Daily Wikipedia pageviews for Anglerfish and Taylor Swift from February 14 through February 17, 2025, with the absolute difference between the two articles.</p>
       <div class="table-wrap">
         <table class="data-table" aria-label="Peak day value table">
           <thead>
@@ -95,12 +98,13 @@
       </div>
       <div class="story-copy">
         <p>This is enough for me to assume that this was a culturally significant event. What I was really wondering in all of this is whether it will actually help the black seadevil be conserved now that one of them has become a famous icon. This is where the conversation becomes much more nuanced.</p>
-        <p>To explore that, I wanted to compare her popularity spike to that of other "charismatic species." In conservation ecology, "charismatic" has a very specific meaning. These are the species that attract disproportionate funding and public support for conservation projects.</p>
+        <p>To explore that, I wanted to compare her popularity spike to that of other "charismatic species." In conservation ecology, "charismatic" has a very specific meaning. These are the species that attract disproportionate funding and public support for conservation projects. Things that humans tend to think are cute, or majestic - think lions, penguins, panda bears, etc.</p>
         <p>Everyone wants to save the tiger, but nobody is launching fundraising campaigns for the obscure, but critically-endangered beetle that happens to live in the same forest. That said, protecting the tiger's habitat can indirectly protect that beetle too, especially if funding is directed toward preserving the ecosystem as a whole.</p>
         <p>A 2018 paper<sup>1</sup> identified the top charismatic animals based on different traits, like rarity, aesthetics, and, well, charisma. Of the top 20, four were marine animals. Three of those four had sufficient Wikipedia pageview data for comparison: the blue whale, the polar bear, and the great white shark. (Dolphins were included in the original list, but the pageview data was too inconsistent to use here, so they were excluded.)</p>
         <p>Now there is something you may notice about this list of species: they are all LARGE. The blue whale is literally the largest animal (as formally defined) that has ever existed on the planet.</p>
         <p>Being large is not a requirement for being characterized as charismatic. Nobody formally decides who the charismatic species get to be, per se; it's an informal title bestowed collectively by human preference, and organizations would be smart to request funding based on the most beloved animal in the habitat they're trying to protect.</p>
-        <p>Still, it is rather rare for a small, weird animal to be considered a "charismatic" species or an "ambassador" species. They are normally large vertebrates that we can somehow anthropomorphize. There are a few smaller exceptions, penguins, for example. Lots of people also seem to love waterbears (aka tardigrades), but they don't exactly need to be conserved, and will probably be on Earth long after humanity has died out.</p>
+        <p>Still, it is rather rare for a small, weird animal to be considered a "charismatic" species or an "ambassador" species. They are normally large vertebrates that we can somehow anthropomorphize. In the black seadevil's case, people just simply seem to be attracted to her weirdness. For example, the female uses what is essentially a bioluminescent "fishing pole" on the top of her head to attract prey. Male anglerfish simply attach to her, fuse with her body and function as parasites for the rest of their lives. She has very, very large teeth for her tiny body, and just generally looks a bit terrifying.</p>
+        <p>That's what makes this surge of interest so fascinating. Does she have what it takes to become a charismatic species?</p>
         <p>The next graph shows the same anglerfish spike from the first chart, but this time with the other three charismatic marine species added in for comparison. The other prominent peak you're seeing corresponds to International Polar Bear Day in 2024. I couldn't find another event that made that particular year stand out, so I'm tentatively attributing it to effective marketing rather than ecological urgency.</p>
       </div>
     </section>
@@ -111,18 +115,20 @@
         <svg id="multi-chart" viewBox="0 0 960 520" role="img" aria-label="Comparison of all species search trends"></svg>
         <div id="multi-tooltip" class="tooltip"></div>
       </div>
+      <p class="chart-caption"><span class="caption-label">Figure 3.</span>Three-year Wikipedia pageview comparison across Anglerfish, Blue whale, Great white shark, and Polar bear, showing both baseline disparity and episodic spikes in attention.</p>
     </section>
 
     <div class="story-copy">
       <p>I averaged out the views for each species over the last three years, and even with its big ol' viewing streak, the anglerfish still comes in below polar bears, white sharks, and blue whales. This is unsurprising, given the general disinterest in anglerfish during the rest of recorded internet history. Still, I thought a better comparison might be a pound-for-pound analysis, since it's so rare for something so tiny to somehow end up as ambassador species.</p>
       <p>In other words, given how small the black seadevil is, how much attention was it able to generate relative to its size?</p>
-      <p>The maximum weight of the other 3 animals was easy to find. However, I wasn't able to locate a reliable maximum weight for a black seadevil, so I gave a very, very conservative estimate. If you have ever seen a photo of one next to something with a relative scale, they are much smaller than expected. They could easily fit in the palm of your hand.</p>
+      <p>The maximum weight of the other 3 animals was easy to find. However, I wasn't able to locate a reliable maximum weight for a black seadevil, so I gave a very, very conservative estimate. If you have ever seen a photo of one next to something with a relative scale, they are much smaller than expected. They could easily fit in the palm of your hand, and that scale is part of what makes the animal so absurdly compelling. According to MBARI's species guide, adult females reach only about 18 centimeters (although they can still swallow prey larger than their own bodies).</p>
       <p>Very conservatively, I'd estimate that with a maximum size of roughly eight inches, female black seadevils cannot weigh more than two pounds soaking wet (which, hopefully, they normally are). Would I personally guess less than a pound? Probably. But we are scientists. And we speak conservatively. So for the sake of this visualization, we'll say the maximum weight of a black seadevil is approximately 2 lbs.</p>
       <p>When you convert the data to pound-for-pound "punching power" (average views over the last three years divided by the maximum weight of each animal) you get a very different picture, as shown here.</p>
     </div>
 
     <section class="chart-card">
       <h2>Animal Size in Pounds</h2>
+      <p class="table-caption"><span class="caption-label">Table 2.</span>Maximum weight assumptions and three-year average daily Wikipedia pageviews used in the pound-for-pound comparison of marine charismatic species.</p>
       <div class="table-wrap">
         <table class="data-table" aria-label="Average daily views over three years">
           <thead>
@@ -151,7 +157,12 @@
         <svg id="weight-bubble-chart" viewBox="0 0 960 600" role="img" aria-label="Circle size comparison of animal weights in pounds"></svg>
         <div id="weight-bubble-tooltip" class="tooltip"></div>
       </div>
+      <p class="chart-caption"><span class="caption-label">Figure 4.</span>Relative body-mass comparison for the four species in the analysis, scaled by approximate maximum weight in pounds.</p>
     </section>
+
+    <div class="story-copy">
+      <p>That does not mean the anglerfish suddenly became the ocean's new enduring celebrity. It means something narrower, but still important: under the right conditions, even a small and unfamiliar animal can command an extraordinary amount of public attention. The harder question is what survives once that attention collapses back to baseline.</p>
+    </div>
 
     <!-- Seabed mining awareness sections hidden for this cut. -->
 
@@ -296,6 +307,7 @@
                 </span>
               </div>
               <p>Maximum weights were drawn from widely reported biological estimates:</p>
+              <p class="table-caption"><span class="caption-label">Table 3.</span>Maximum weight assumptions referenced in the views-per-pound calculation described in the methods.</p>
               <div class="table-wrap methods-table-wrap">
                 <table class="data-table methods-table" aria-label="Species maximum weight assumptions">
                   <thead>
