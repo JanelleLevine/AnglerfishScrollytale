@@ -15,7 +15,6 @@
     const status = d3.select("#status");
     const seabedStatus = d3.select("#seabed-status");
     const kendrickAnglerStatus = d3.select("#kendrick-angler-status");
-    const resetFocusButton = d3.select("#reset-focus");
     const seabedScaleLinearButton = d3.select("#seabed-scale-linear");
     const seabedScaleLogButton = d3.select("#seabed-scale-log");
     const kendrickPoll = document.getElementById("kendrick-correlation-poll");
@@ -175,8 +174,6 @@
       runOnceWhenVisible("#weight-bubble-chart", () => drawWeightBubbleChart(parsedRows));
       renderAverageDailyTable(parsedRows, metricNames);
       prefetchCsvCandidates(kendrickCsvCandidates, "Kendrick vs Angler CSV");
-
-      status.text(`Loaded ${anglerfishData.length} daily points from ${formatDate(d3.min(anglerfishData, d => d.date))} to ${formatDate(d3.max(anglerfishData, d => d.date))}.`);
     }).catch(error => {
       status.style("color", "#ffb4a2").text(`Failed to load data: ${error.message}`);
     });
@@ -3264,30 +3261,39 @@
         .attr("opacity", 0.6)
         .attr("d", d => line(d.values));
 
+      const legendX = Math.max(12, innerWidth - 190);
       const legend = g.append("g")
         .attr("class", "legend")
-        .attr("transform", `translate(${Math.max(12, innerWidth - 190)}, 16)`);
+        .attr("transform", `translate(${legendX}, 16)`);
 
       const legendItems = legend.selectAll(".legend-item")
-        .data(series.map(s => s.name))
+        .data(series)
         .enter()
         .append("g")
         .attr("class", "legend-item")
         .attr("transform", (_, i) => `translate(0, ${i * 26})`);
 
       legendItems.append("rect")
+        .attr("class", "legend-checkbox")
         .attr("x", 0)
-        .attr("y", -5)
-        .attr("width", 16)
-        .attr("height", 10)
-        .attr("rx", 2)
-        .attr("fill", d => color(d))
-        .attr("opacity", 0.95);
+        .attr("y", -8)
+        .attr("width", 15)
+        .attr("height", 15)
+        .attr("rx", 3);
+
+      legendItems.append("path")
+        .attr("class", "legend-check")
+        .attr("d", "M3 0 L6 3 L12 -4")
+        .attr("fill", "none")
+        .attr("stroke", d => color(d.name))
+        .attr("stroke-width", 2.2)
+        .attr("stroke-linecap", "round")
+        .attr("stroke-linejoin", "round");
 
       legendItems.append("text")
         .attr("x", 24)
         .attr("y", 0)
-        .text(d => d);
+        .text(d => d.name);
 
       const peakPoint = d3.greatest(
         series.flatMap(s => s.values.map(v => ({ ...v, name: s.name }))),
@@ -3315,57 +3321,84 @@
           .text(`Highest point: ${peakPoint.name}`);
       }
 
-      const mutedColor = "rgba(112, 139, 154, 0.64)";
-      let activeMetric = null;
+      const selectedMetrics = new Set(series.map(s => s.name));
 
-      function updateHighlight() {
-        const hasActive = activeMetric !== null;
+      function getSelectedPeakPoint() {
+        const visibleSeries = series.filter(s => selectedMetrics.has(s.name));
+        if (visibleSeries.length === 0) {
+          return null;
+        }
 
-        lines
-          .attr("stroke", d => {
-            if (!hasActive) return color(d.name);
-            return d.name === activeMetric ? color(d.name) : mutedColor;
-          })
-          .attr("stroke-width", d => {
-            if (!hasActive) return 1.9;
-            return d.name === activeMetric ? 4.2 : 1.4;
-          })
-          .attr("opacity", d => {
-            if (!hasActive) return 0.6;
-            return d.name === activeMetric ? 1 : 0.16;
-          });
-
-        legendItems.select("rect")
-          .attr("fill", d => (!hasActive || d === activeMetric) ? color(d) : mutedColor)
-          .attr("opacity", d => (!hasActive || d === activeMetric) ? 0.96 : 0.48);
-
-        legendItems.select("text")
-          .attr("opacity", d => (!hasActive || d === activeMetric) ? 1 : 0.5);
+        return d3.greatest(
+          visibleSeries.flatMap(s => s.values.map(v => ({ ...v, name: s.name }))),
+          d => d.value
+        );
       }
 
-      function setActiveMetric(metricName) {
-        activeMetric = (activeMetric === metricName) ? null : metricName;
+      function updatePeakAnnotation() {
+        if (!peakMarker || !peakLabel) return;
+
+        const selectedPeak = getSelectedPeakPoint();
+        if (!selectedPeak) {
+          peakMarker.attr("opacity", 0);
+          peakLabel.attr("opacity", 0);
+          return;
+        }
+
+        const peakX = x(selectedPeak.date);
+        const peakY = y(displayedValue(selectedPeak.value));
+        const markerOpacity = 0.18 + (0.82 * revealFactor);
+
+        peakMarker
+          .attr("cx", peakX)
+          .attr("cy", peakY)
+          .attr("opacity", markerOpacity);
+
+        peakLabel
+          .attr("x", Math.min(innerWidth - 150, peakX + 10))
+          .attr("y", Math.max(14, peakY - 10))
+          .attr("opacity", markerOpacity)
+          .text(`Highest point: ${selectedPeak.name}`);
+      }
+
+      function updateHighlight() {
+        lines
+          .attr("stroke", d => color(d.name))
+          .attr("stroke-width", d => selectedMetrics.has(d.name) ? 2.4 : 1.2)
+          .attr("opacity", d => selectedMetrics.has(d.name) ? 0.82 : 0.08);
+
+        legendItems.select(".legend-checkbox")
+          .attr("fill", d => selectedMetrics.has(d.name) ? "rgba(239, 250, 255, 0.08)" : "rgba(6, 19, 29, 0.24)")
+          .attr("stroke", d => selectedMetrics.has(d.name) ? color(d.name) : "rgba(177, 208, 224, 0.44)")
+          .attr("stroke-width", d => selectedMetrics.has(d.name) ? 1.5 : 1.1);
+
+        legendItems.select(".legend-check")
+          .attr("opacity", d => selectedMetrics.has(d.name) ? 1 : 0);
+
+        legendItems.select("text")
+          .attr("opacity", d => selectedMetrics.has(d.name) ? 1 : 0.48)
+          .attr("font-weight", d => selectedMetrics.has(d.name) ? 600 : 400);
+
+        updatePeakAnnotation();
+      }
+
+      function toggleMetric(metricName) {
+        if (selectedMetrics.has(metricName)) {
+          selectedMetrics.delete(metricName);
+        } else {
+          selectedMetrics.add(metricName);
+        }
         updateHighlight();
       }
 
       lines.on("click", (event, d) => {
         event.stopPropagation();
-        setActiveMetric(d.name);
+        toggleMetric(d.name);
       });
 
       legendItems.on("click", (event, d) => {
         event.stopPropagation();
-        setActiveMetric(d);
-      });
-
-      multiSvg.on("click", () => {
-        activeMetric = null;
-        updateHighlight();
-      });
-
-      resetFocusButton.on("click", () => {
-        activeMetric = null;
-        updateHighlight();
+        toggleMetric(d.name);
       });
 
       const hoverGuide = g.append("line")
@@ -3412,9 +3445,14 @@
             }))
             .filter(v => Number.isFinite(v.value));
 
-          const visibleValues = activeMetric
-            ? valuesAtDate.filter(v => v.name === activeMetric)
-            : valuesAtDate;
+          const visibleValues = valuesAtDate.filter(v => selectedMetrics.has(v.name));
+
+          if (visibleValues.length === 0) {
+            hoverGuide.attr("opacity", 0);
+            hoverDots.attr("opacity", 0);
+            multiTooltip.style("opacity", 0);
+            return;
+          }
 
           const byName = new Map(visibleValues.map(v => [v.name, v]));
 
@@ -3463,16 +3501,7 @@
       const updateComparisonReveal = nextReveal => {
         revealFactor = nextReveal;
         lines.attr("d", d => line(d.values));
-        if (peakPoint && peakMarker && peakLabel) {
-          const peakY = y(displayedValue(peakPoint.value));
-          const markerOpacity = 0.18 + (0.82 * revealFactor);
-          peakMarker
-            .attr("cy", peakY)
-            .attr("opacity", markerOpacity);
-          peakLabel
-            .attr("y", Math.max(14, peakY - 10))
-            .attr("opacity", markerOpacity);
-        }
+        updatePeakAnnotation();
       };
 
       const revealTargetNode = multiSvg.node()
