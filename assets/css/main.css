@@ -556,6 +556,12 @@
       margin-right: auto;
     }
 
+    .story-copy > h2 {
+      max-width: var(--reading-measure);
+      margin: 38px auto 10px;
+      padding-top: 28px;
+    }
+
     .story-copy p {
       margin: 0 auto 14px;
     }
