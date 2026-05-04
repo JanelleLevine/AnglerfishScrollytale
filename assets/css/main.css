@@ -680,6 +680,11 @@
       margin-top: 8px;
     }
 
+    #single-chart {
+      margin-top: -62px;
+      margin-bottom: -12px;
+    }
+
     svg {
       display: block;
       width: 100%;

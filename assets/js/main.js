@@ -1075,20 +1075,26 @@
       styleAxis(xAxis);
       redrawYGuides();
 
-      g.append("text")
-        .attr("class", "axis-label")
-        .attr("x", innerWidth / 2)
-        .attr("y", innerHeight + 46)
-        .attr("text-anchor", "middle")
-        .text("Date");
+      if (isPrimarySingleChart) {
+        yGrid.style("display", "none");
+        xAxis.style("display", "none");
+        yAxis.style("display", "none");
+      } else {
+        g.append("text")
+          .attr("class", "axis-label")
+          .attr("x", innerWidth / 2)
+          .attr("y", innerHeight + 46)
+          .attr("text-anchor", "middle")
+          .text("Date");
 
-      g.append("text")
-        .attr("class", "axis-label")
-        .attr("x", -innerHeight / 2)
-        .attr("y", -48)
-        .attr("transform", "rotate(-90)")
-        .attr("text-anchor", "middle")
-        .text("Search interest");
+        g.append("text")
+          .attr("class", "axis-label")
+          .attr("x", -innerHeight / 2)
+          .attr("y", -48)
+          .attr("transform", "rotate(-90)")
+          .attr("text-anchor", "middle")
+          .text("Search interest");
+      }
 
       const fishWidth = 300;
       const fishHeight = 300;
@@ -1284,7 +1290,6 @@
 
       let taylorPath = null;
       let comparisonLegend = null;
-      let revealHint = null;
       let taylorLine = null;
 
       if (revealEnabled) {
@@ -1331,12 +1336,6 @@
           .attr("dominant-baseline", "middle")
           .text(d => d.name);
 
-        revealHint = g.append("text")
-          .attr("x", 12)
-          .attr("y", 62)
-          .attr("fill", "rgba(217, 241, 252, 0.9)")
-          .attr("font-size", 11)
-          .text("Scroll to reveal Taylor Swift");
       }
 
       const bisectDate = d3.bisector(d => d.date).left;
@@ -1463,20 +1462,6 @@
           } else {
             peakLabel.text(defaultPeakLabelText);
           }
-        }
-        if (revealHint) {
-          const hintText = phase.p >= (STORY_MAX_PROGRESS - 0.01)
-            ? "Bracelet revealed. Scroll up to rewind."
-            : phase.p4 > 0.001
-              ? `Final reveal (${Math.round(phase.e4 * 100)}%)`
-            : phase.p3 > 0.001
-              ? `Zooming into Anglerfish peak (${Math.round(phase.e3 * 100)}%)`
-              : phase.p2 > 0.001
-                ? `Mic fading out (${Math.round(phase.e2 * 100)}%)`
-                : `Scroll to animate Taylor Swift (${Math.round(phase.e1 * 100)}%)`;
-          revealHint
-            .attr("opacity", Math.max(0.24, 1 - (phase.e3 * 0.55)))
-            .text(hintText);
         }
       }
 
